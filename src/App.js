@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import './css/index.css';
-import apiKey from './config.js';
+//import apiKey from './config.js';
+
+//Component Imports
+import Header from './Header';
+
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
+        <Header />
       
       </div>
     );
