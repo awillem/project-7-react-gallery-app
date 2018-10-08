@@ -1,10 +1,7 @@
 import React from 'react';
-import {
-  // Route, 
-  NavLink,
-  // Redirect
+import { 
+  NavLink
 } from 'react-router-dom';
-// import GalleryForm from './GalleryForm';
 
 const Nav = (props) => {
     return (

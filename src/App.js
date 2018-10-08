@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {
   Route, 
-  // NavLink,
   Redirect, 
   BrowserRouter, 
   Switch
