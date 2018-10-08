@@ -1,6 +1,8 @@
 This is my Project 7 for the Full Stack JavaScript Techdegree with Treehouse. 
 
-
+Set up a .config.js file to use an api Key. 
+  const config = {apiKey: "key"}
+  export default config;
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
