@@ -7,11 +7,7 @@ const Header = (props) => {
       <div>
         <SearchForm onSearch={props.onSearch} />
         
-        <Nav 
-          cats={props.cats}
-          dogs={props.dogs}
-          computers={props.computers}
-        />
+        <Nav />
       </div>
       
     );

@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import './css/index.css';
 import axios from 'axios';
-import config from './.config';
+import apiKey from './.config';
 
 
 
@@ -16,8 +16,7 @@ import Header from './Header';
 import GalleryForm from './GalleryForm';
 import NotFound from './NotFound';
 
-
-const apiKey = config.apiKey;
+//creates the main App component
 class App extends Component {
 //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
   state = {
@@ -29,6 +28,7 @@ class App extends Component {
     loading: true
   }
 
+  //when the component is first mounted, axios retrieves images for the 3 default categories.
   componentDidMount() {
     axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=cat&per_page=24&page=1&format=json&nojsoncallback=1`)
       .then(response => {
@@ -65,7 +65,8 @@ class App extends Component {
             });
   }
   
-
+//First, changes loading to true, then
+//uses the query passed up from the search form and retrieves images for that and changes loading back to false.
   performSearch = (query) => {
     this.setState( prevState => ({
       ...prevState,
@@ -102,7 +103,7 @@ class App extends Component {
             <Route path="/dogs" render={ () => <GalleryForm images={this.state.dogs} title={'Dogs'} />} />
             <Route path="/computers" render={ () => <GalleryForm images={this.state.computers} title={'Computers'} />} />
             <Route path="/search" render={ () => <GalleryForm images={this.state.imgs} title={this.state.query} />} />
-            
+            {/* if the route is not one of the above routes, go to the 404 page */}
             <Route component={NotFound} />
            </Switch> }
         </div>
